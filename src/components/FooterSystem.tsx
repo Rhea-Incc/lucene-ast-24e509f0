@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import lucenLogo from "@/assets/lucen-logo.png";
 
 const FooterSystem = () => {
   return (
@@ -13,6 +14,7 @@ const FooterSystem = () => {
         />
 
         <div className="flex flex-col items-center gap-6">
+          <img src={lucenLogo} alt="Lucen" className="h-12 w-auto opacity-60" />
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -24,8 +26,8 @@ const FooterSystem = () => {
           <p className="font-body text-xs tracking-[0.3em] text-muted-foreground">
             THIS IS NOT A WEBSITE — IT IS A SYSTEM
           </p>
-          <div className="mt-8 flex gap-8">
-            {["SYSTEM", "ENGINE", "PROTOCOL", "ARCHIVE"].map((item) => (
+          <div className="mt-8 flex flex-wrap justify-center gap-8">
+            {["SYSTEMS", "BRAIN", "INDUSTRIES", "PARTNERS", "CONTACT"].map((item) => (
               <a
                 key={item}
                 href="#"
