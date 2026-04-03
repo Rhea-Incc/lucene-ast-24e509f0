@@ -1,14 +1,37 @@
 import { motion } from "framer-motion";
+import lucenLogo from "@/assets/lucen-logo.png";
 
 const HeroEnvironment = () => {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Ambient light orbs */}
+      {/* Video background */}
       <div className="absolute inset-0">
-        <motion.div
-          className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full animate-pulse-glow"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+          style={{ filter: "brightness(0.6) saturate(1.2)" }}
+        >
+          <source src="/videos/desktop091224.mp4" type="video/mp4" />
+        </video>
+        {/* Light overlay */}
+        <div
+          className="absolute inset-0"
           style={{
-            background: "radial-gradient(circle, hsl(185 100% 45% / 0.12) 0%, transparent 60%)",
+            background:
+              "radial-gradient(ellipse at center, transparent 30%, hsl(230 40% 3% / 0.7) 70%, hsl(230 40% 3%) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Ambient light orbs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, hsl(185 100% 45% / 0.08) 0%, transparent 60%)",
           }}
           animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
@@ -16,18 +39,10 @@ const HeroEnvironment = () => {
         <motion.div
           className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full"
           style={{
-            background: "radial-gradient(circle, hsl(260 80% 65% / 0.1) 0%, transparent 60%)",
+            background: "radial-gradient(circle, hsl(260 80% 65% / 0.06) 0%, transparent 60%)",
           }}
           animate={{ scale: [1, 1.2, 1], x: [0, -25, 0], y: [0, 15, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{
-            background: "radial-gradient(circle, hsl(35 100% 60% / 0.06) 0%, transparent 60%)",
-          }}
-          animate={{ scale: [1, 1.3, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
@@ -42,7 +57,8 @@ const HeroEnvironment = () => {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center"
         >
-          <h1 className="font-display text-6xl font-light tracking-tight text-glow sm:text-8xl md:text-9xl">
+          <img src={lucenLogo} alt="Lucen" className="mb-6 h-24 w-auto sm:h-32 md:h-40" />
+          <h1 className="font-display text-5xl font-light tracking-tight text-glow sm:text-7xl md:text-8xl">
             <span className="bg-gradient-to-r from-foreground via-glow-primary to-foreground bg-clip-text text-transparent">
               LUCEN
             </span>
@@ -53,9 +69,9 @@ const HeroEnvironment = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-md text-center font-body text-sm tracking-[0.3em] text-muted-foreground"
+          className="max-w-lg text-center font-body text-sm tracking-[0.3em] text-muted-foreground"
         >
-          REAL-TIME LIGHT SIMULATION INTERFACE
+          THE INFRASTRUCTURE FOR PHYGITAL ATTENTION
         </motion.p>
 
         {/* Silk ribbon divider */}
