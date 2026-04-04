@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import lucenLogo from "@/assets/lucen-logo.png";
+import lucenLogo from "@/assets/lucen-logo.webp";
 
 const HeroEnvironment = () => {
   return (
