@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import brandsImg from "@/assets/brands-events.jpg";
-import starbucksImg from "@/assets/starbucks.jpg";
-import lacosteImg from "@/assets/lacoste.jpg";
+import LazyImage from "./LazyImage";
+import brandsImg from "@/assets/brands-events.webp";
+import starbucksImg from "@/assets/starbucks.webp";
+import lacosteImg from "@/assets/lacoste.webp";
 
 const cases = [
   { label: "Retail Product Launch Activation", image: brandsImg },
