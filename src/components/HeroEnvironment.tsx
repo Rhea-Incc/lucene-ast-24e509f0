@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import lucenLogo from "@/assets/lucen-logo.png";
+import lucenLogo from "@/assets/lucen-logo.webp";
 
 const HeroEnvironment = () => {
   return (
@@ -13,9 +13,9 @@ const HeroEnvironment = () => {
           playsInline
           className="h-full w-full object-cover"
           style={{ filter: "brightness(0.6) saturate(1.2)" }}
-        >
-          <source src="/videos/desktop091224.mp4" type="video/mp4" />
-        </video>
+          preload="auto"
+        />
+
         {/* Light overlay */}
         <div
           className="absolute inset-0"

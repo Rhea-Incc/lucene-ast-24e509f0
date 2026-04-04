@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import LazyVideo from "./LazyVideo";
 import GlassPanel from "./GlassPanel";
 
 const offerings = [
@@ -53,15 +54,10 @@ const OfferingsSystem = () => {
             <GlassPanel key={item.title} delay={i * 0.12} className="group relative overflow-hidden">
               {/* Video background */}
               <div className="absolute inset-0 opacity-20 transition-opacity duration-700 group-hover:opacity-40">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                <LazyVideo
+                  src={item.video}
                   className="h-full w-full object-cover"
-                >
-                  <source src={item.video} type="video/mp4" />
-                </video>
+                />
               </div>
 
               {/* Hover glow */}
