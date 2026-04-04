@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import CursorLight from "@/components/CursorLight";
 import HeroEnvironment from "@/components/HeroEnvironment";
+import Header from "@/components/Header";
 
 const LucenDefinition = lazy(() => import("@/components/LucenDefinition"));
 const OfferingsSystem = lazy(() => import("@/components/OfferingsSystem"));
@@ -18,6 +19,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       <CursorLight />
+      <Header />
       <HeroEnvironment />
       <Suspense fallback={null}>
         <LucenDefinition />
