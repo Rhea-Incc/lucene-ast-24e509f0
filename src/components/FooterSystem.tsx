@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import lucenLogo from "@/assets/lucen-logo.png";
+import { Link } from "react-router-dom";
+import lucenLogo from "@/assets/lucen-logo.webp";
 
 const FooterSystem = () => {
   return (
@@ -24,17 +25,22 @@ const FooterSystem = () => {
             <span className="text-glow">LUCEN</span>
           </motion.p>
           <p className="font-body text-xs tracking-[0.3em] text-muted-foreground">
-            THIS IS NOT A WEBSITE — IT IS A SYSTEM
+            THE INFRASTRUCTURE FOR PHYGITAL ATTENTION
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {["SYSTEMS", "BRAIN", "INDUSTRIES", "PARTNERS", "CONTACT"].map((item) => (
-              <a
-                key={item}
-                href="#"
+            {[
+              { label: "SERVICES", to: "/services" },
+              { label: "INDUSTRIES", to: "/industries" },
+              { label: "CONTACT", to: "/contact" },
+              { label: "GET STARTED", to: "/get-started" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
                 className="font-display text-[10px] tracking-[0.3em] text-muted-foreground transition-colors duration-300 hover:text-glow-primary"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
         </div>
