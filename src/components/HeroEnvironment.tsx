@@ -13,8 +13,9 @@ const HeroEnvironment = () => {
           playsInline
           className="h-full w-full object-cover"
           style={{ filter: "brightness(0.6) saturate(1.2)" }}
-        >
-          <source src="/videos/desktop091224.mp4" type="video/mp4" />
+          preload="auto"
+          src="/videos/desktop091224.mp4"
+        />
         </video>
         {/* Light overlay */}
         <div
