@@ -50,7 +50,7 @@ const UseCasesStream = () => {
               {/* Image or gradient placeholder */}
               <div className="relative h-48 w-full overflow-hidden">
                 {c.image ? (
-                  <img
+                  <LazyImage
                     src={c.image}
                     alt={c.label}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
