@@ -26,16 +26,23 @@ const LazyVideo = ({ src, className, style }: LazyVideoProps) => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isVisible && ref.current) {
+      ref.current.play().catch(() => {});
+    }
+  }, [isVisible]);
+
   return (
     <video
       ref={ref}
-      autoPlay={isVisible}
+      autoPlay
       muted
       loop
       playsInline
       className={className}
       style={style}
       src={isVisible ? src : undefined}
+      preload="none"
     />
   );
 };
