@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import lucenLogo from "@/assets/lucen-logo.webp";
 
 const navItems = [
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Contact", href: "/contact" },
@@ -32,7 +33,6 @@ const Header = () => {
           style={{ "--header-bg": bgOpacity } as React.CSSProperties}
           className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6"
         >
-          {/* Logo + Name */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
               src={lucenLogo}
@@ -45,7 +45,6 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <Link
@@ -68,28 +67,17 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             className="flex flex-col gap-1.5 md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="block h-px w-6 bg-foreground"
-            />
-            <motion.span
-              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="block h-px w-6 bg-foreground"
-            />
-            <motion.span
-              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="block h-px w-6 bg-foreground"
-            />
+            <motion.span animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className="block h-px w-6 bg-foreground" />
+            <motion.span animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }} className="block h-px w-6 bg-foreground" />
+            <motion.span animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className="block h-px w-6 bg-foreground" />
           </button>
         </motion.div>
       </motion.div>
 
-      {/* Mobile menu */}
       <motion.div
         initial={false}
         animate={mobileOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}

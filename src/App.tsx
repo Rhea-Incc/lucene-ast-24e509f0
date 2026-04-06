@@ -10,6 +10,7 @@ import UseCasePage from "./pages/UseCasePage.tsx";
 import Services from "./pages/Services.tsx";
 import Industries from "./pages/Industries.tsx";
 import Contact from "./pages/Contact.tsx";
+import About from "./pages/About.tsx";
 import GetStarted from "./pages/GetStarted.tsx";
 import LyraChat from "./components/LyraChat.tsx";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/industries/:slug" element={<IndustryPage />} />
           <Route path="/use-cases/:slug" element={<UseCasePage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/get-started" element={<GetStarted />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
