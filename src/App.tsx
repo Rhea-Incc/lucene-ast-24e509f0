@@ -21,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <LyraChat />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
