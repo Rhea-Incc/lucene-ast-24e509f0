@@ -11,6 +11,7 @@ import Services from "./pages/Services.tsx";
 import Industries from "./pages/Industries.tsx";
 import Contact from "./pages/Contact.tsx";
 import GetStarted from "./pages/GetStarted.tsx";
+import LyraChat from "./components/LyraChat.tsx";
 
 const queryClient = new QueryClient();
 
