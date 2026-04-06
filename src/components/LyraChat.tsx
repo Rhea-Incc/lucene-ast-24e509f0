@@ -11,7 +11,7 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/lyra-chat`;
 const LyraChat = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "Hi, I'm **Lyra** — Lucen's AI assistant. Tell me about your project and I'll suggest how we can help. ✨" },
+    { role: "assistant", content: "Hi, I'm **Lyra** — Lucen's AI assistant. Tell me about your project and I'll suggest how we can help. ✨\n\nNeed to talk to a human? [Contact us](/contact) anytime." },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -113,11 +113,12 @@ const LyraChat = () => {
     }
   };
 
-  // Intercept internal navigation links
   const handleLinkClick = (href: string) => {
     if (href.startsWith("/")) {
       navigate(href);
       setOpen(false);
+    } else if (href.startsWith("tel:") || href.startsWith("https://wa.me")) {
+      window.open(href, "_blank");
     } else {
       window.open(href, "_blank");
     }
@@ -125,23 +126,26 @@ const LyraChat = () => {
 
   return (
     <>
-      {/* Floating button */}
-      <AnimatePresence>
-        {!open && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-[hsl(var(--surface-glass-border))] bg-[hsl(var(--surface-glass))] backdrop-blur-[var(--glass-blur)] shadow-[0_0_30px_hsl(var(--glow-primary)/0.15),0_0_60px_hsl(var(--glow-accent)/0.08)] transition-shadow duration-500 hover:shadow-[0_0_40px_hsl(var(--glow-primary)/0.3),0_0_80px_hsl(var(--glow-accent)/0.15)]"
-            aria-label="Open Lyra chatbot"
-          >
-            <Sparkles className="h-6 w-6 text-[hsl(var(--glow-primary))]" />
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {/* Floating toggle button — always visible */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setOpen((v) => !v)}
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-[hsl(var(--surface-glass-border))] bg-[hsl(var(--surface-glass))] backdrop-blur-[var(--glass-blur)] shadow-[0_0_30px_hsl(var(--glow-primary)/0.15),0_0_60px_hsl(var(--glow-accent)/0.08)] transition-shadow duration-500 hover:shadow-[0_0_40px_hsl(var(--glow-primary)/0.3),0_0_80px_hsl(var(--glow-accent)/0.15)]"
+        aria-label={open ? "Close Lyra chatbot" : "Open Lyra chatbot"}
+      >
+        <AnimatePresence mode="wait">
+          {open ? (
+            <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <X className="h-5 w-5 text-[hsl(var(--glow-primary))]" />
+            </motion.span>
+          ) : (
+            <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <Sparkles className="h-6 w-6 text-[hsl(var(--glow-primary))]" />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </motion.button>
 
       {/* Chat panel */}
       <AnimatePresence>
@@ -151,8 +155,8 @@ const LyraChat = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-6 right-6 z-50 flex w-[360px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-[hsl(var(--surface-glass-border))] bg-[hsl(var(--surface-glass)/0.85)] backdrop-blur-[var(--glass-blur)] shadow-[0_0_60px_hsl(var(--glow-primary)/0.1),0_8px_32px_rgba(0,0,0,0.4)]"
-            style={{ height: "min(520px, calc(100vh - 3rem))" }}
+            className="fixed bottom-24 right-6 z-50 flex w-[360px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-[hsl(var(--surface-glass-border))] bg-[hsl(var(--surface-glass)/0.85)] backdrop-blur-[var(--glass-blur)] shadow-[0_0_60px_hsl(var(--glow-primary)/0.1),0_8px_32px_rgba(0,0,0,0.4)]"
+            style={{ height: "min(520px, calc(100vh - 7rem))" }}
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-[hsl(var(--surface-glass-border))] px-5 py-3.5">
@@ -165,13 +169,6 @@ const LyraChat = () => {
                   <p className="font-body text-[10px] text-muted-foreground tracking-wider">LUCEN AI ASSISTANT</p>
                 </div>
               </div>
-              <button
-                onClick={() => setOpen(false)}
-                className="flex h-7 w-7 items-center justify-center rounded-full transition-colors hover:bg-[hsl(var(--muted))]"
-                aria-label="Close chat"
-              >
-                <X className="h-4 w-4 text-muted-foreground" />
-              </button>
             </div>
 
             {/* Messages */}
