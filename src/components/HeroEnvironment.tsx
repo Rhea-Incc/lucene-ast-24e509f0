@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import { lazy, Suspense } from "react";
-
-const GlassParticles = lazy(() => import("./GlassParticles"));
 
 const HeroEnvironment = () => {
   return (
@@ -47,11 +44,6 @@ const HeroEnvironment = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
-
-      {/* 3D glass particle field */}
-      <Suspense fallback={null}>
-        <GlassParticles variant="hero" />
-      </Suspense>
 
       {/* Noise overlay */}
       <div className="noise-overlay absolute inset-0" />

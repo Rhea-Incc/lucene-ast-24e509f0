@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
-import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
 import { Eye, Brain, Lightbulb, Globe, Users, Zap } from "lucide-react";
-
-const GlassParticles = lazy(() => import("@/components/GlassParticles"));
 
 const values = [
   { icon: Eye, title: "Attention is Currency", desc: "We believe physical attention is the most valuable — and most wasted — asset in marketing. We capture it." },
@@ -23,10 +20,7 @@ const About = () => {
       <CursorLight />
       <Header />
 
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 pt-24">
-        <Suspense fallback={null}>
-          <GlassParticles variant="about" />
-        </Suspense>
+      <section className="relative flex min-h-[60vh] items-center justify-center px-6 pt-24">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="font-display text-xs tracking-[0.4em] text-glow-primary">ABOUT LUCEN</p>
