@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { lazy, Suspense } from "react";
+
+const GlassParticles = lazy(() => import("./GlassParticles"));
 
 const HeroEnvironment = () => {
   return (
