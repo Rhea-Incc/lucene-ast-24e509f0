@@ -23,7 +23,10 @@ const About = () => {
       <CursorLight />
       <Header />
 
-      <section className="relative flex min-h-[60vh] items-center justify-center px-6 pt-24">
+      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 pt-24">
+        <Suspense fallback={null}>
+          <GlassParticles variant="about" />
+        </Suspense>
         <div className="mx-auto max-w-4xl text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="font-display text-xs tracking-[0.4em] text-glow-primary">ABOUT LUCEN</p>
