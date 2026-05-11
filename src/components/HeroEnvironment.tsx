@@ -48,6 +48,11 @@ const HeroEnvironment = () => {
         />
       </div>
 
+      {/* 3D glass particle field */}
+      <Suspense fallback={null}>
+        <GlassParticles variant="hero" />
+      </Suspense>
+
       {/* Noise overlay */}
       <div className="noise-overlay absolute inset-0" />
 
