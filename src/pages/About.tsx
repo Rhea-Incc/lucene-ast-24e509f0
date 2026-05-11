@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
 import { Eye, Brain, Lightbulb, Globe, Users, Zap } from "lucide-react";
+
+const GlassParticles = lazy(() => import("@/components/GlassParticles"));
 
 const values = [
   { icon: Eye, title: "Attention is Currency", desc: "We believe physical attention is the most valuable — and most wasted — asset in marketing. We capture it." },
