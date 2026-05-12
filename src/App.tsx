@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import GetStarted from "./pages/GetStarted.tsx";
 import LyraChat from "./components/LyraChat.tsx";
+import PerfHUD from "./components/PerfHUD.tsx";
 
 const queryClient = new QueryClient();
 
