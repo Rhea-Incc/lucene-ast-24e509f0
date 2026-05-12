@@ -24,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LyraChat />
+        <PerfHUD />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
