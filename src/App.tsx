@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import GetStarted from "./pages/GetStarted.tsx";
 import LyraChat from "./components/LyraChat.tsx";
+import PerfHUD from "./components/PerfHUD.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LyraChat />
+        <PerfHUD />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
