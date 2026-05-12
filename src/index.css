@@ -63,32 +63,10 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }
-
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overscroll-behavior-y: none;
-  }
-
-  img, video {
-    content-visibility: auto;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -128,59 +106,9 @@
                 0 0 15px -3px hsl(var(--glow-primary) / 0.2);
   }
 
-  /* Enhanced glass variants */
-  .glass-strong {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--surface-glass) / 0.85) 0%,
-      hsl(var(--surface-glass) / 0.55) 100%
-    );
-    backdrop-filter: blur(36px) saturate(160%);
-    -webkit-backdrop-filter: blur(36px) saturate(160%);
-    border: 1px solid hsl(var(--surface-glass-border) / 0.55);
-    box-shadow:
-      inset 0 1px 0 hsl(var(--foreground) / 0.06),
-      inset 0 -1px 0 hsl(var(--background) / 0.4),
-      0 20px 60px -20px hsl(var(--background) / 0.8);
-  }
-
-  .glass-frost {
-    background: hsl(var(--surface-glass) / 0.35);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid hsl(var(--foreground) / 0.06);
-  }
-
-  .glass-sheen::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--foreground) / 0.08) 0%,
-      transparent 35%,
-      transparent 70%,
-      hsl(var(--glow-primary) / 0.05) 100%
-    );
-    mix-blend-mode: overlay;
-  }
-
-  .gpu {
-    transform: translateZ(0);
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-  }
-
   .font-display {
     font-family: var(--font-display);
   }
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
 }
 
 /* Silk ribbon gradient */
