@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
+import SEO from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 

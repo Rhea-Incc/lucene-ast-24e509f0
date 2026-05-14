@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
+import SEO from "@/components/SEO";
 import { Eye, Brain, Lightbulb, Globe, Users, Zap } from "lucide-react";
 
 const values = [
@@ -17,6 +18,11 @@ const values = [
 const About = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
+      <SEO
+        title="About Lucen — Intelligent Environments & Phygital Attention"
+        description="Lucen turns physical spaces into intelligent environments through holographic light, simulation, and AI-driven analytics."
+        path="/about"
+      />
       <CursorLight />
       <Header />
 

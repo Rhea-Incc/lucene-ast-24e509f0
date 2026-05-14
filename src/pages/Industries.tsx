@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
+import SEO from "@/components/SEO";
 import { industries } from "@/components/IndustriesField";
 
 const Industries = () => {
@@ -11,6 +12,11 @@ const Industries = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
+      <SEO
+        title="Industries — Where Lucen Transforms Physical Spaces"
+        description="Lucen deploys holographic and intelligent environments across retail, transit, hospitality, education, stadiums, and more."
+        path="/industries"
+      />
       <CursorLight />
       <Header />
 
