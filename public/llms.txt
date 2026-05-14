@@ -1,0 +1,14 @@
+# Lucen
+
+> Lucen builds the infrastructure for phygital attention — holographic systems, simulation environments, and AI-driven analytics that turn physical footfall into measurable revenue.
+
+Lucen designs and deploys holographic light-field displays, real-time 3D simulation experiences, and the Lucen Brain analytics platform across high-footfall environments worldwide.
+
+## Pages
+
+- [Home](/): Overview of Lucen's intelligent environments and phygital attention infrastructure.
+- [About](/about): Mission, vision, and values behind Lucen.
+- [Services](/services): Holographic systems, simulation, Lucen Brain, and content design.
+- [Industries](/industries): Sectors Lucen serves — retail, transit, hospitality, education, and more.
+- [Contact](/contact): Reach the team via message, call (+254727750097, +254727105289), or callback request.
+- [Get Started](/get-started): Five-step path from discovery to deployment.

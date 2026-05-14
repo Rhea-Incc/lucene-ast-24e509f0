@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
+import SEO from "@/components/SEO";
 
 const steps = [
   { num: "01", title: "Discovery Call", description: "We map your space, audience, and objectives to design the right solution." },
@@ -15,6 +16,11 @@ const steps = [
 
 const GetStarted = () => (
   <div className="relative min-h-screen overflow-hidden bg-background">
+    <SEO
+      title="Get Started — From Discovery to Deployment with Lucen"
+      description="Five-step engagement: discovery, system design, content creation, deployment, and Lucen Brain optimization."
+      path="/get-started"
+    />
     <CursorLight />
     <Header />
 

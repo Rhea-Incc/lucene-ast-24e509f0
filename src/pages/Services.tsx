@@ -5,6 +5,7 @@ import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import GlassPanel from "@/components/GlassPanel";
 import LazyVideo from "@/components/LazyVideo";
+import SEO from "@/components/SEO";
 
 const services = [
   { title: "Holographic Systems", video: "/videos/showreel.mp4", description: "Light-field displays that stop traffic and convert attention into interaction. Our holographic systems create impossible-to-ignore experiences in physical spaces." },
@@ -15,6 +16,12 @@ const services = [
 
 const Services = () => (
   <div className="relative min-h-screen overflow-hidden bg-background">
+    <SEO
+      title="Services — Holographic Systems, Simulation & Lucen Brain"
+      description="Light-field holographic displays, real-time 3D simulation environments, AI analytics, and immersive content design."
+      path="/services"
+      jsonLd={services.map((s) => ({ "@context": "https://schema.org", "@type": "Service", name: s.title, description: s.description, provider: { "@type": "Organization", name: "Lucen" } }))}
+    />
     <CursorLight />
     <Header />
 
