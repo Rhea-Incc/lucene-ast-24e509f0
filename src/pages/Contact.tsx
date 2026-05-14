@@ -58,6 +58,22 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
+      <SEO
+        title="Contact Lucen — Message, Call, or Request a Callback"
+        description="Reach Lucen by message, phone (+254727750097, +254727105289), or schedule a callback to discuss your phygital project."
+        path="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Lucen",
+          url: "https://lucene-ast.lovable.app/",
+          telephone: ["+254727750097", "+254727105289"],
+          contactPoint: [
+            { "@type": "ContactPoint", telephone: "+254727750097", contactType: "sales" },
+            { "@type": "ContactPoint", telephone: "+254727105289", contactType: "customer support" },
+          ],
+        }}
+      />
       <CursorLight />
       <Header />
 
