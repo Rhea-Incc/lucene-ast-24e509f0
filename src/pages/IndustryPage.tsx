@@ -6,6 +6,19 @@ import CursorLight from "@/components/CursorLight";
 import FooterSystem from "@/components/FooterSystem";
 import LazyVideo from "@/components/LazyVideo";
 import GlassPanel from "@/components/GlassPanel";
+import shoePoster from "@/assets/showcase-shoe.jpg";
+import autoPoster from "@/assets/showcase-automotive.jpg";
+import loungePoster from "@/assets/showcase-lounge.png";
+import monumentPoster from "@/assets/showcase-monument.png";
+import planePoster from "@/assets/showcase-plane.png";
+
+const posters: Record<string, string> = {
+  "retail-luxury": shoePoster,
+  "automotive": autoPoster,
+  "airlines": planePoster,
+  "hospitality": loungePoster,
+  "events-exhibitions": monumentPoster,
+};
 
 const industryContent: Record<string, { tagline: string; description: string; services: string[]; benefits: string[] }> = {
   "retail-luxury": {
@@ -102,7 +115,7 @@ const IndustryPage = () => {
 
       {/* Hero with video */}
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <LazyVideo src={industry.video} className="h-full w-full object-cover" style={{ filter: "brightness(0.5) saturate(1.2)" }} />
+        <LazyVideo src={industry.video} poster={slug ? posters[slug] : undefined} className="h-full w-full object-cover" style={{ filter: "brightness(0.5) saturate(1.2)" }} />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

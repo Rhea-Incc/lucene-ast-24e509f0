@@ -6,20 +6,24 @@ import LazyImage from "./LazyImage";
 import LazyVideo from "./LazyVideo";
 import brandsImg from "@/assets/brands-events.webp";
 import starbucksImg from "@/assets/starbucks.webp";
-import lacosteImg from "@/assets/lacoste.webp";
 import realEstateImg from "@/assets/real-estate-hologram.jpg";
+import shoeImg from "@/assets/showcase-shoe.jpg";
+import autoImg from "@/assets/showcase-automotive.jpg";
+import loungeImg from "@/assets/showcase-lounge.png";
+import monumentImg from "@/assets/showcase-monument.png";
+import planeImg from "@/assets/showcase-plane.png";
 
 export const cases = [
-  { label: "Retail Product Launch Activation", slug: "retail-launch", image: brandsImg, description: "Holographic displays that captivate shoppers and drive product interaction at the point of purchase." },
+  { label: "Retail Product Launch Activation", slug: "retail-launch", image: shoeImg, video: "/videos/scale-your-message.mp4", description: "Holographic displays that captivate shoppers and drive product interaction at the point of purchase." },
   { label: "Real Estate Sales Center Visualization", slug: "real-estate-viz", image: realEstateImg, video: "/videos/real-estate.mp4", description: "3D building simulations that let buyers walk through properties before they're built." },
-  { label: "Automotive Showroom Experience", slug: "automotive-showroom", image: lacosteImg, video: "/videos/autoshowroom.mp4", description: "Interactive vehicle configurators and holographic displays in dealer showrooms." },
+  { label: "Automotive Showroom Experience", slug: "automotive-showroom", image: autoImg, video: "/videos/autoshowroom.mp4", description: "Interactive vehicle configurators and holographic displays in dealer showrooms." },
   { label: "University Recruitment Installations", slug: "university-recruitment", video: "/videos/school-demos.mp4", description: "Immersive campus simulations that give prospective students a taste of university life." },
-  { label: "Mall Advertising Network", slug: "mall-advertising", image: starbucksImg, video: "/videos/dooh-anamorphic.mp4", description: "High-impact digital out-of-home displays that monetize footfall in premium locations." },
-  { label: "Airport Brand Campaigns", slug: "airport-campaigns", video: "/videos/dooh-anamorphic.mp4", description: "Captive-audience engagement through holographic displays in departure lounges and terminals." },
-  { label: "Corporate Lobby Installations", slug: "corporate-lobby", video: "/videos/corporate-lobby.mp4", description: "Stunning welcome experiences that communicate brand identity through light and motion." },
-  { label: "Trade Show Immersive Booths", slug: "trade-show-booths", image: lacosteImg, video: "/videos/exhibitions.mp4", description: "Exhibition stands that stop traffic and generate qualified leads through immersive experiences." },
-  { label: "Airline In-Flight Experience", slug: "airline-experience", video: "/videos/simulation-2.mp4", description: "Elevating passenger journey with interactive holographic entertainment and information." },
-  { label: "Hospitality Guest Engagement", slug: "hospitality-engagement", video: "/videos/hospitality.mp4", description: "Transforming hotel lobbies and concierge with intelligent interactive displays." },
+  { label: "Mall Advertising Network", slug: "mall-advertising", image: starbucksImg, video: "/videos/outdoor-advertising.mp4", description: "High-impact digital out-of-home displays that monetize footfall in premium locations." },
+  { label: "Airport Brand Campaigns", slug: "airport-campaigns", image: planeImg, video: "/videos/captivate-passersby.mp4", description: "Captive-audience engagement through holographic displays in departure lounges and terminals." },
+  { label: "Corporate Lobby Installations", slug: "corporate-lobby", image: loungeImg, video: "/videos/corporate-lobby.mp4", description: "Stunning welcome experiences that communicate brand identity through light and motion." },
+  { label: "Trade Show Immersive Booths", slug: "trade-show-booths", image: monumentImg, video: "/videos/exhibitions.mp4", description: "Exhibition stands that stop traffic and generate qualified leads through immersive experiences." },
+  { label: "Airline In-Flight Experience", slug: "airline-experience", image: planeImg, video: "/videos/simulation-2.mp4", description: "Elevating passenger journey with interactive holographic entertainment and information." },
+  { label: "Hospitality Guest Engagement", slug: "hospitality-engagement", image: loungeImg, video: "/videos/hospitality.mp4", description: "Transforming hotel lobbies and concierge with intelligent interactive displays." },
   { label: "3D Simulation & Visualization", slug: "simulation-viz", video: "/videos/simulation-1-2.mp4", description: "Real-time spatial simulations for architecture, products, and immersive walkthroughs." },
   { label: "Institutional Demos & Presentations", slug: "institutional-demos", video: "/videos/institutional-demo.mp4", description: "High-impact institutional presentations with holographic 3D content delivery." },
 ];

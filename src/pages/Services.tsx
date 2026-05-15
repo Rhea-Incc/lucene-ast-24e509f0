@@ -8,7 +8,7 @@ import LazyVideo from "@/components/LazyVideo";
 import SEO from "@/components/SEO";
 
 const services = [
-  { title: "Holographic Systems", video: "/videos/showreel.mp4", description: "Light-field displays that stop traffic and convert attention into interaction. Our holographic systems create impossible-to-ignore experiences in physical spaces." },
+  { title: "Holographic Systems", video: "/videos/scale-your-message.mp4", description: "Light-field displays that stop traffic and convert attention into interaction. Our holographic systems create impossible-to-ignore experiences in physical spaces." },
   { title: "Simulation & 3D Environments", video: "/videos/simulation.mp4", description: "Real-time spatial simulations for architecture, products, and immersive spaces. From real estate walkthroughs to industrial training." },
   { title: "Lucen Brain", video: "/videos/data-viz.mp4", description: "AI-driven analytics that maps footfall, dwell time, and behavioral patterns into actionable data. Every interaction becomes measurable." },
   { title: "Content & Experience Design", video: "/videos/track-overlay.mp4", description: "3D modeling, animation, and interactive content crafted for holographic delivery. We design experiences, not just content." },

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import lucenLogo from "@/assets/lucen-logo.webp";
+import lucenLogo from "@/assets/lucen-logo.png";
 
 const FooterSystem = () => {
   return (
@@ -15,7 +15,12 @@ const FooterSystem = () => {
         />
 
         <div className="flex flex-col items-center gap-6">
-          <img src={lucenLogo} alt="Lucen" className="h-12 w-auto opacity-60" />
+          <img
+            src={lucenLogo}
+            alt="Lucen"
+            className="h-16 w-auto opacity-80"
+            style={{ filter: "invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.1)", mixBlendMode: "screen" }}
+          />
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
