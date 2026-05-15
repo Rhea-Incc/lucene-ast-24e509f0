@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import lucenLogo from "@/assets/lucen-logo.webp";
+import lucenLogo from "@/assets/lucen-logo.png";
 
 const navItems = [
   { label: "About", href: "/about" },
@@ -37,7 +37,8 @@ const Header = () => {
             <motion.img
               src={lucenLogo}
               alt="Lucen"
-              className="h-8 w-auto"
+              className="h-9 w-auto"
+              style={{ filter: "invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.1)", mixBlendMode: "screen" }}
               whileHover={{ scale: 1.05 }}
             />
             <span className="font-display text-lg font-light tracking-[0.15em] text-foreground group-hover:text-glow transition-all duration-300">

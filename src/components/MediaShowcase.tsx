@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import GlassPanel from "./GlassPanel";
+import LazyVideo from "./LazyVideo";
+import shoeImg from "@/assets/showcase-shoe.jpg";
+import autoImg from "@/assets/showcase-automotive.jpg";
+import monumentImg from "@/assets/showcase-monument.png";
 
 const MediaShowcase = () => {
   return (
@@ -21,60 +25,47 @@ const MediaShowcase = () => {
           </h2>
         </motion.div>
 
-        {/* Asymmetric layout */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          {/* Large panel */}
           <div className="md:col-span-7">
-            <GlassPanel delay={0.1} className="relative h-80 overflow-hidden md:h-96">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  className="h-32 w-32 rounded-full"
-                  style={{
-                    background: "radial-gradient(circle, hsl(185 100% 45% / 0.3) 0%, hsl(260 80% 65% / 0.1) 50%, transparent 70%)",
-                  }}
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                />
-              </div>
-              <div className="relative z-10">
-                <p className="font-display text-[10px] tracking-[0.3em] text-muted-foreground">
-                  HOLOGRAPHIC VIEWPORT
-                </p>
-                <p className="mt-2 font-display text-lg text-foreground">Full-Bleed Cinematic</p>
+            <GlassPanel delay={0.1} className="relative h-80 overflow-hidden md:h-96 !p-0">
+              <LazyVideo
+                src="/videos/captivate-passersby.mp4"
+                poster={shoeImg}
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute left-6 bottom-5 z-10">
+                <p className="font-display text-[10px] tracking-[0.3em] text-glow-primary">HOLOGRAPHIC VIEWPORT</p>
+                <p className="mt-1 font-display text-lg text-foreground">Captivate passersby</p>
               </div>
             </GlassPanel>
           </div>
 
-          {/* Stacked panels */}
           <div className="flex flex-col gap-6 md:col-span-5">
-            <GlassPanel delay={0.2} className="flex-1">
-              <p className="font-display text-[10px] tracking-[0.3em] text-muted-foreground">
-                DEPTH MASKING
-              </p>
-              <div className="mt-4 flex gap-2">
-                {[0.2, 0.4, 0.6, 0.8, 1].map((opacity, i) => (
-                  <motion.div
-                    key={i}
-                    className="h-12 w-12 rounded-lg border border-glow-primary/20"
-                    style={{ opacity, background: `hsl(185 100% 45% / ${opacity * 0.15})` }}
-                    animate={{ y: [0, -4 * (i + 1), 0] }}
-                    transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                ))}
+            <GlassPanel delay={0.2} className="relative h-44 overflow-hidden !p-0 md:h-[11.5rem]">
+              <LazyVideo
+                src="/videos/scale-your-message.mp4"
+                poster={autoImg}
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute left-5 bottom-4 z-10">
+                <p className="font-display text-[10px] tracking-[0.3em] text-glow-accent">SCALE</p>
+                <p className="mt-1 font-display text-sm text-foreground">Scale your message</p>
               </div>
             </GlassPanel>
 
-            <GlassPanel delay={0.3} className="flex-1">
-              <p className="font-display text-[10px] tracking-[0.3em] text-muted-foreground">
-                LIGHT WRAP
-              </p>
-              <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                Dynamic color grading with real-time light integration and soft-edge compositing
-              </p>
-              <div className="silk-ribbon mt-4 h-1 w-full rounded-full" />
+            <GlassPanel delay={0.3} className="relative h-44 overflow-hidden !p-0 md:h-[11.5rem]">
+              <LazyVideo
+                src="/videos/outdoor-advertising.mp4"
+                poster={monumentImg}
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute left-5 bottom-4 z-10">
+                <p className="font-display text-[10px] tracking-[0.3em] text-glow-warm">OUTDOOR</p>
+                <p className="mt-1 font-display text-sm text-foreground">Beyond the billboard</p>
+              </div>
             </GlassPanel>
           </div>
         </div>
